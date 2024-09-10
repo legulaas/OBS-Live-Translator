@@ -1,6 +1,6 @@
 # **OCR e Tradução com OBS**
 
-Este projeto é uma aplicação em Python que utiliza OCR (Reconhecimento Óptico de Caracteres) e tradução automática para sobrepor traduções em vídeos em tempo real, integrando com o OBS Studio.]
+Este projeto é uma aplicação em Python que utiliza OCR (Reconhecimento Óptico de Caracteres) e tradução automática para sobrepor traduções em vídeos em tempo real, integrando com o OBS Studio.
 A aplicação captura frames de um vídeo, processa o texto encontrado e adiciona a tradução diretamente sobre a imagem no OBS.
 
 Observações: A aplicação ainda não é capaz de identificar e traduzir em tempo real. O tempo de processamento está muito alto, e depende muito do hardware em que a aplicação está rodando. 
@@ -46,7 +46,7 @@ https://pytorch.org/get-started/locally/
 1. **Configure o OBS Studio:**
     - Certifique-se de que o plugin OBS WebSocket está instalado e ativo.
     - Ajuste o host, porta e senha no código para corresponder às configurações do OBS.
-    - Crie uma fonte de IMAGEM e selecione uma imagem chamada "overlay.png" na raiz do diretório (Mesmo que ela ainda não exista, pois essa será a imagem atualizada com todas as traduções e que será aplicada).
+    - Crie uma fonte de IMAGEM e selecione uma imagem chamada "overlay.png" na raiz do repositório (Mesmo que ela ainda não exista, pois essa será a imagem atualizada com todas as traduções e que será aplicada).
     - Nas variáveis width e height no arquivo main.py, coloque a sua resolução de gravação do OBS.
 
 2. **Execute o script:**
