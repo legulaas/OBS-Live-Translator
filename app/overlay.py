@@ -15,5 +15,5 @@ def add_overlay(draw, bbox, translated_text, font_path="arial.ttf"):
     new_y = center_y - text_height / 2
     
     background_area = (new_x, new_y, new_x + text_width, new_y + text_height)
-    draw.rectangle(background_area, fill=(0, 0, 0, 128))
+    draw.rectangle(background_area, fill=(0, 0, 0, 220))
     draw.text((new_x, new_y), translated_text, font=font, fill=(255, 255, 255, 255))

@@ -13,6 +13,9 @@ from app.overlay import add_overlay
 from app.log import log
 from app.obs import OBS
 
+# Definir prioridade sempre alta para o programa
+os.system("wmic process where processid=\""+str(os.getpid())+"\" CALL setpriority 128")
+
 # Inicia WebSocket com OBS
 obs = OBS("localhost", 4444, "123456")
 
