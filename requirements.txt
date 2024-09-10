@@ -1,5 +1,6 @@
 easyocr
-pandas
 deep_translator
-tqdm
+obs-websocket-py
 pandas
+opencv-python
+pynput
