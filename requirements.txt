@@ -1,0 +1,5 @@
+easyocr
+pandas
+deep_translator
+tqdm
+pandas
