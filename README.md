@@ -47,7 +47,7 @@ Caso tenha sugestões de otimização para a aplicação, faça um fork e també
 2. **Execute o script:**
 
     ```bash
-    python seu_script.py
+    python main.py
     ```
 
 3. **Controle com o teclado:**
