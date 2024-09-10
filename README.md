@@ -20,7 +20,7 @@ Caso tenha sugestões de otimização para a aplicação, faça um fork e també
 1. **Clone o repositório:**
 
     ```bash
-    git clone https://github.com/seu_usuario/seu_repositorio.git
+    git clone https://github.com/legulaas/OBS-Live-Translator.git
     ```
 
 2. **Instale as dependências:**
