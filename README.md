@@ -39,6 +39,9 @@ https://pytorch.org/get-started/locally/
     pip install -r requirements.txt
     ```
 
+    Extensão OBS WebSocket para OBS:
+       https://github.com/obsproject/obs-websocket/releases
+
     Certifique-se de que o OBS Studio está instalado e configurado para aceitar conexões WebSocket.
 
 ## **Uso**
