@@ -6,6 +6,11 @@ A aplicação captura frames de um vídeo, processa o texto encontrado e adicion
 Observações: A aplicação ainda não é capaz de identificar e traduzir em tempo real. O tempo de processamento está muito alto, e depende muito do hardware em que a aplicação está rodando. 
 Caso tenha sugestões de otimização para a aplicação, faça um fork e também envie um pull request.
 
+Nota 1: Após instalar os drivers de CUDA da NVIDIA e instalar o pytorch com CUDA Habilitado, a performance teve uma melhora extremamente significativa, demorando apenas 5 segundos para gerar.
+Setup: RTX 3060 TI, I5-11400F, 16GB RAM 3200MHz
+
+https://pytorch.org/get-started/locally/
+
 ## **Índice**
 
 - [Instalação](#instalação)
