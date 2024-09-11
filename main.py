@@ -18,7 +18,7 @@ from app.ocr import OCR
 obs = OBS("localhost", 4444, "123456")
 
 # Instancia o OCR (Optical Character Recognition)
-ocr = OCR('ja')
+ocr = OCR('en')
 
 def on_press(key):
 
@@ -51,7 +51,7 @@ def ocr_tradutor(res):
 	draw = ImageDraw.Draw(image)
 
 	results = ocr.read_text(img_fns[0])
-
+      
 	for bbox, text, _ in results:
 		translated_text = translate_text(text)
 		if translated_text:
