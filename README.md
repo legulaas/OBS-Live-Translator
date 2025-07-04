@@ -1,77 +1,77 @@
-# **OCR e Tradução com OBS**
+# **OCR and Translation with OBS**
 
-Este projeto é uma aplicação em Python que utiliza OCR (Reconhecimento Óptico de Caracteres) e tradução automática para sobrepor traduções em vídeos em tempo real, integrando com o OBS Studio.
-A aplicação captura frames de um vídeo, processa o texto encontrado e adiciona a tradução diretamente sobre a imagem no OBS.
+This project is a Python application that uses OCR (Optical Character Recognition) and machine translation to superimpose real-time translations onto videos, integrating with OBS Studio.
+The application captures frames from a video, processes the found text, and adds the translation directly onto the image in OBS.
 
-Observações: A aplicação ainda não é capaz de identificar e traduzir em tempo real. O tempo de processamento está muito alto, e depende muito do hardware em que a aplicação está rodando. 
-Caso tenha sugestões de otimização para a aplicação, faça um fork e também envie um pull request.
+Observations: The application is not yet capable of identifying and translating in real-time. The processing time is very high and heavily depends on the hardware on which the application is running.
+If you have optimization suggestions for the application, feel free to fork and submit a pull request.
 
-Nota 1: Após instalar os drivers de CUDA da NVIDIA e instalar o pytorch com CUDA Habilitado, a performance teve uma melhora extremamente significativa, demorando apenas 5 segundos para gerar.
+Note 1: After installing NVIDIA CUDA drivers and installing PyTorch with CUDA enabled, performance improved significantly, taking only 5 seconds to generate.
 Setup: RTX 3060 TI, I5-11400F, 16GB RAM 3200MHz
 
 https://pytorch.org/get-started/locally/
 
-## **Índice**
+## **Table of Contents**
 
-- [Instalação](#instalação)
-- [Uso](#uso)
-- [Arquitetura](#arquitetura)
-- [Dependências](#dependências)
-- [Contribuição](#contribuição)
-- [Licença](#licença)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Architecture](#architecture)
+- [Dependencies](#dependencies)
+- [Contribution](#contribution)
+- [License](#license)
 
-## **Instalação**
+## **Installation**
 
-1. **Clone o repositório:**
+1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/legulaas/OBS-Live-Translator.git
+    git clone [https://github.com/legulaas/OBS-Live-Translator.git](https://github.com/legulaas/OBS-Live-Translator.git)
     ```
 
-2. **Instale as dependências:**
+2. **Install dependencies:**
 
-    Crie um ambiente virtual e instale as bibliotecas necessárias:
+    Create a virtual environment and install the necessary libraries:
 
     ```bash
-    cd seu_repositorio
+    cd your_repository
     python -m venv venv
-    source venv/bin/activate  # Para Windows use `venv\Scripts\activate`
+    source venv/bin/activate  # For Windows use `venv\Scripts\activate`
     pip install -r requirements.txt
     ```
 
-    Extensão OBS WebSocket para OBS:
+    OBS WebSocket extension for OBS:
        https://github.com/obsproject/obs-websocket/releases
 
-    Certifique-se de que o OBS Studio está instalado e configurado para aceitar conexões WebSocket.
+    Ensure that OBS Studio is installed and configured to accept WebSocket connections.
 
-## **Uso**
+## **Usage**
 
-1. **Configure o OBS Studio:**
-    - Certifique-se de que o plugin OBS WebSocket está instalado e ativo.
-    - Ajuste o host, porta e senha no código para corresponder às configurações do OBS.
-    - Crie uma fonte de IMAGEM e selecione uma imagem chamada "overlay.png" na raiz do repositório (Mesmo que ela ainda não exista, pois essa será a imagem atualizada com todas as traduções e que será aplicada).
-    - Nas variáveis width e height no arquivo main.py, coloque a sua resolução de gravação do OBS.
+1. **Configure OBS Studio:**
+    - Make sure the OBS WebSocket plugin is installed and active.
+    - Adjust the host, port, and password in the code to match your OBS settings.
+    - Create an IMAGE source and select an image named "overlay.png" in the root of the repository (Even if it doesn't exist yet, as this will be the updated image with all translations applied).
+    - In the `width` and `height` variables in the `main.py` file, set your OBS recording resolution.
 
-2. **Execute o script:**
+2. **Run the script:**
 
     ```bash
     python main.py
     ```
 
-3. **Controle com o teclado:**
-    - **Scroll Lock:** Inicia a captura e processamento do frame atual.
-    - **Pause:** Limpa os frames capturados e a sobreposição.
-    - **F12:** Encerra o programa.
+3. **Keyboard control:**
+    - **Scroll Lock:** Starts capturing and processing the current frame.
+    - **Pause:** Clears captured frames and the overlay.
+    - **F12:** Terminates the program.
 
-## **Arquitetura**
+## **Architecture**
 
-- **WebSocket OBS:** Conecta e controla o OBS Studio. (Algumas funções de inicio de stream estão configuradas mas ainda não utilizadas, use como quiser)
-- **Captura de Frames:** Salva o primeiro frame do vídeo capturado.
-- **OCR e Tradução:** Utiliza OCR para extrair texto e traduz para o idioma desejado.
-- **Sobreposição:** Adiciona o texto traduzido sobre a imagem original.
-- **Logs:** Registra eventos e erros para monitoramento e depuração.
+- **WebSocket OBS:** Connects to and controls OBS Studio. (Some stream start functions are configured but not yet used; use as desired)
+- **Frame Capture:** Saves the first captured video frame.
+- **OCR and Translation:** Uses OCR to extract text and translates it to the desired language.
+- **Overlay:** Adds the translated text onto the original image.
+- **Logs:** Records events and errors for monitoring and debugging.
 
-## **Dependências**
+## **Dependencies**
 - `easyocr`
 - `deep_translator`
 - `obs-websocket-py`
@@ -80,13 +80,13 @@ https://pytorch.org/get-started/locally/
 - `Pillow`
 - `pynput`
 - `glob`
-- `app.ocr` (módulo personalizado para OCR)
-- `app.translation` (módulo personalizado para tradução)
-- `app.overlay` (módulo personalizado para sobreposição)
-- `app.log` (módulo personalizado para logs)
-- `app.obs` (módulo personalizado para integração com OBS)
+- `app.ocr` (custom module for OCR)
+- `app.translation` (custom module for translation)
+- `app.overlay` (custom module for overlay)
+- `app.log` (custom module for logs)
+- `app.obs` (custom module for OBS integration)
 
-Para instalar as dependências, use:
+To install the dependencies, use:
 
 ```bash
 pip install -r requirements.txt
